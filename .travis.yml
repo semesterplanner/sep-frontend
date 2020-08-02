@@ -1,0 +1,14 @@
+os: linux
+language: python
+jobs:
+  include:
+    - stage: "Test"
+      name: "Test React Frontend"
+      language: node_js
+      node_js: 12
+      install:
+        - npm install
+      script:
+        - npx eslint ./src/
+        - npm run build --if-present
+        - npm test
