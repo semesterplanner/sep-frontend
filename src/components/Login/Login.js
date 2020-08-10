@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import instance from '../../axiosConfig';
-import { Button, Container, Modal,
+import { Button } from 'react-bootstrap';
+import './Login.css';
+
+import { Modal,
   ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Cookies from 'js-cookie';
 
-const Login = () => {
+export const Login = () => {
   const handleOIDCLogin = () => {
     instance.get('/oidc/authenticate/')
         .then((response) => {
@@ -45,18 +48,21 @@ const Login = () => {
 
 
   return (
-    <Container>
-      <ButtonGroup vertical={true} >
-        <Button onClick={handleOIDCLogin}>
+    <>
+      <text class="textfield">
+        Bitte nutzen Sie den HPI OpenID Connect Login.
+      </text>
+      <ButtonGroup class="buttonGroup" vertical={true} >
+        <Button variant="primary" size="lg" onClick={handleOIDCLogin}>
           Login with HPI OpenID Connect
         </Button>
-        <Button onClick={handleOIDCLogout}>
+        <Button variant="primary" size="lg" onClick={handleOIDCLogout}>
           Logout with HPI OpenID Connect
         </Button>
-        <Button onClick={sendAPIRequest} variant={'dark'}>
+        <Button variant="primary" size="lg" onClick={sendAPIRequest}>
           Send API request
         </Button>
-        <Button onClick={toggle}>
+        <Button variant="primary" size="lg" onClick={toggle}>
           Toggle modal
         </Button>
       </ButtonGroup>
@@ -66,12 +72,10 @@ const Login = () => {
           content here
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+          <Button variant="primary" size="lg" onClick={toggle}>Do Something</Button>{' '}
+          <Button variant="secondary" size="lg" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
-    </Container>
+    </>
   );
 };
-
-export default Login;

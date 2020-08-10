@@ -4,7 +4,7 @@ import { API_BASE_URL, LOGIN_ERROR_REDIRECT, LOGIN_REDIRECT }
   from '../../constants';
 import Cookies from 'js-cookie';
 
-const LoginCallback = () => {
+export const LoginCallback = () => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const qParams = [
@@ -27,5 +27,3 @@ const LoginCallback = () => {
 
   return <p>Logging you in ...</p>;
 };
-
-export default LoginCallback;

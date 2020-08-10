@@ -1,8 +1,8 @@
 import React from 'react';
-import { LoginPage } from './Login/Login.js';
+import { Login } from '../Login/Login';
 
 export const Home = () => {
   return (
-    <LoginPage/>
+    <Login/>
   );
 };
