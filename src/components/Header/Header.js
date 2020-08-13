@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-
+import { Button, Navbar, Nav } from 'react-bootstrap';
+import { handleOIDCLogout } from '../../helper/login';
 import './Header.css';
 
 export const Header = () => {
+
+
   return (
     <Navbar role="navigation">
       <Navbar.Brand as={Link} to="/">Semesterplaner</Navbar.Brand>
@@ -14,6 +15,10 @@ export const Header = () => {
         <Nav.Link as={Link} to="/myplans">Meine Pläne</Nav.Link>
         <Nav.Link as={Link} to="/planner">Planer</Nav.Link>
       </Nav>
+
+      <Button variant="secondary" onClick={handleOIDCLogout}>
+        Logout
+      </Button>
     </Navbar>
   );
 };
