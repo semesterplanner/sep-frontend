@@ -9,12 +9,10 @@ import { MyPlans } from './Pages/MyPlans';
 import { Planner } from './Pages/Planner';
 import { Login } from './Login/Login';
 
-/** The App that gets loaded on site */
+/** The App that gets loaded on site
+* @return {void}
+*/
 export const App = () => {
-  /**
-   * renders the App on site
-   * @return {[HTMLDivElement]} HTML to be displayed
-   */
   return (
     <Router>
       <div className="App">
@@ -28,4 +26,4 @@ export const App = () => {
       </Switch>
     </Router>
   );
-}
+};

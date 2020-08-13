@@ -1,7 +1,9 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
+import { Modal,
+  ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 
-export const Modal = () => {
-  
+export const Popup = () => {
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
@@ -15,23 +17,26 @@ export const Modal = () => {
         });
   };
 
-  return(
+  return (
     <>
-    <Button variant="primary" size="lg" onClick={sendAPIRequest}>
-      Send API request
-    </Button>
-    <Button variant="primary" size="lg" onClick={toggle}>
-      Toggle modal
-    </Button>
-    <Modal isOpen={modal} toggle={toggle}>
-      <ModalHeader toggle={toggle}>Response</ModalHeader>
-      <ModalBody id={'modal'}>
-        content here
-      </ModalBody>
-      <ModalFooter>
-        <Button variant="primary" size="lg" onClick={toggle}>Do Something</Button>{' '}
-        <Button variant="secondary" size="lg" onClick={toggle}>Cancel</Button>
-      </ModalFooter>
-    </Modal>
+      <Button variant="primary" size="lg" onClick={sendAPIRequest}>
+        Send API request
+      </Button>
+      <Button variant="primary" size="lg" onClick={toggle}>
+        Toggle modal
+      </Button>
+      <Modal isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>Response</ModalHeader>
+        <ModalBody id={'modal'}>
+          content here
+        </ModalBody>
+        <ModalFooter>
+          <Button variant="primary" size="lg" onClick={toggle}>
+            Do Something
+          </Button>{' '}
+          <Button variant="secondary" size="lg" onClick={toggle}>Cancel</Button>
+        </ModalFooter>
+      </Modal>
     </>
-);
+  );
+};

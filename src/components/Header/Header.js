@@ -5,8 +5,6 @@ import { handleOIDCLogout } from '../../helper/login';
 import './Header.css';
 
 export const Header = () => {
-
-
   return (
     <Navbar role="navigation">
       <Navbar.Brand as={Link} to="/">Semesterplaner</Navbar.Brand>
